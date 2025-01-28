@@ -14,8 +14,8 @@ const OrderForm = () => {
     { id: "product1", name: "Cocosoap/ Kadalai Maavu soap", price: 60 },
     { id: "product2", name: "Coco Shampoo(250ml)", price: 125 },
     { id: "product3", name: "Coco Handwash(500ml)", price: 75 },
-    { id: "product3", name: "Coco Dishwah(500ml)", price: 85 },
-    { id: "product3", name: "Coco handwash(1000ml)", price: 250 },
+    { id: "product4", name: "Coco Dishwah(500ml)", price: 85 },
+    { id: "product5", name: "Coco handwash(1000ml)", price: 250 },
   ];
 
   const handleInputChange = (e) => {
@@ -57,7 +57,7 @@ const OrderForm = () => {
       orderDetails += `${product.name} (x${item.quantity})\n`;
     });
 
-    orderDetails += `\nTotal Amount: $${calculateTotal()}`;
+    orderDetails += `\nTotal Amount: Rs.${calculateTotal()}`;
 
     const encodedMessage = encodeURIComponent(orderDetails);
     const recipientNumber = "919865562897"; // Replace with your WhatsApp number
