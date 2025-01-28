@@ -1,0 +1,152 @@
+/* Global Styles */
+body{
+    font-family: 'Poppins', sans-serif;
+    background: dark;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: black;
+}
+
+/* Order Form Container */
+.order-form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    width: 420px;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Form Title */
+.order-form h2 {
+    text-align: center;
+    color: red;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* Input Fields */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.input-group label {
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: black;
+    font-size: 14px;
+}
+
+.input-group input, .input-group select {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: lightgrey;
+    transition: all 0.2s ease-in-out;
+    color: black;
+    
+}
+
+
+.input-group input:focus, .input-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0px 0px 5px rgba(59, 130, 246, 0.5);
+    color: black;
+}
+
+/* Product Section */
+.product-section {
+    margin-top: 15px;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.product select, .product input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+    transition: all 0.2s ease-in-out;
+    color: black;
+}
+
+.product select:focus, .product input:focus {
+    border-color: #3b82f6;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-btn {
+    background-color: #10b981;
+    color: white;
+}
+
+.add-btn:hover {
+    background-color: #059669;
+}
+
+.remove-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.remove-btn:hover {
+    background-color: #dc2626;
+}
+
+.submit-btn {
+    background-color: #25D366;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0px 4px 8px rgba(37, 211, 102, 0.4);
+}
+
+.submit-btn:hover {
+    background-color: #1ebe5d;
+}
+
+/* Total Amount */
+.total {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #1e293b;
+}
+
+/* Responsive Design */
+@media (max-width: 450px) {
+    .order-form {
+        width: 90%;
+        padding: 20px;
+    }
+}
