@@ -113,7 +113,7 @@ const OrderForm = () => {
             >
               {productOptions.map((product) => (
                 <option key={product.id} value={product.id}>
-                  {product.name} - ${product.price}
+                  {product.name} - Rs.{product.price}/-
                 </option>
               ))}
             </select> <br />
@@ -158,7 +158,7 @@ const OrderForm = () => {
         </button>
       </div >
       <div style={{ marginTop: "20px" }}>
-        <h3>Total: ${calculateTotal()}</h3>
+        <h3>Total: Rs.{calculateTotal()}/-</h3>
       </div>
       <button 
         type="button"
