@@ -10,10 +10,8 @@
 .order-form-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    min-height: 100vh;
-    background-color: #f8f9fa;
     padding: 15px;
 }
 
@@ -94,7 +92,7 @@ button:hover {
 
 /* Remove product button */
 .remove-product {
-    background-color: red;
+    background-color: yellow;
     color: white;
     width: auto;
 }
@@ -121,6 +119,7 @@ button:hover {
     max-width: 400px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
 }
 
 .popup input {
@@ -129,6 +128,8 @@ button:hover {
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    background-color: white;
+    color: black;
 }
 
 .popup button {
@@ -160,21 +161,21 @@ button:hover {
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .order-form {
-        width: 95%;
+        width: 95vw;
         padding: 15px;
     }
 
     .order-form h2 {
-        font-size: 42px;
+        font-size: 20px;
     }
 
     .order-form select,
     .order-form input {
-        font-size: 36px;
+        font-size: 15px;
     }
 
     button {
-        font-size: 26px;
+        font-size: 20px;
         padding: 10px;
     }
 }
@@ -202,4 +203,10 @@ button:hover {
     .popup {
         width: 95%;
     }
+    
+}
+
+.list{
+    list-style-position: inside;
+    text-align: left;
 }

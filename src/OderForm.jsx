@@ -51,7 +51,7 @@ const OrderForm = () => {
 
   const sendWhatsAppMessage = () => {
     const { name, phone, address, products } = formData;
-    let orderDetails = `Order Details:\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nProducts:\n`;
+    let orderDetails = `Customer Details:\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nProducts ordered:\n`;
 
     products.forEach((item) => {
       const product = productOptions.find((p) => p.id === item.product);
@@ -66,25 +66,25 @@ const OrderForm = () => {
   };
 
   return (
-    <div> 
-    <img src={ele} style={{ width: "750px", height: "250px", marginTop: "0" }}/> 
-    <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3>
+    <div> <center>
+    <img src={ele} style={{ width: "480px", height: "250px", margin: "10px", borderRadius:"20px" }}/> 
+    <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3></center>
     
     <div className="order-form-container">
       <div className="order-form" style={{ maxWidth: "750px", padding: "20px" }}>
-        <h2>Order Form</h2>
+        <h2>Order Form</h2> <br />
         {formData.products.map((item, index) => (
           <div className="order-pack" key={index} style={{ marginBottom: "10px" }}>
-            <label>Product</label> <br />
+            <label>Product</label> 
             <select value={item.product} onChange={(e) => handleProductChange(index, "product", e.target.value)}>
               {productOptions.map((product) => (
                 <option key={product.id} value={product.id}>
                   {product.name} - Rs.{product.price}/-
                 </option>
               ))}
-            </select> <br />
+            </select> <br /> <br />
             
-            <label>Quantity</label> <br />            
+            <label>Quantity</label>            
             <input  className="quanNum" type="number" value={item.quantity} min="1" onChange={(e) => handleProductChange(index, "quantity", parseInt(e.target.value))} />
             <button type="button" onClick={() => removeProduct(index)} style={{ background: "red", color: "white", border: "none", padding: "5px 10px", cursor: "pointer", width:"100%" }}>Remove</button>
           </div>
@@ -103,16 +103,16 @@ const OrderForm = () => {
             <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required />
             <label>Address</label>
             <input type="text" name="address" value={formData.address} onChange={handleInputChange} required />
-            <h3>Order Summary</h3>
-            <ul>
+            <h3 style={{color:"red"}}>Your order</h3>
+            <ol className="list">
               {formData.products.map((item, index) => {
                 const product = productOptions.find((p) => p.id === item.product);
                 return <li key={index}>{product.name} (x{item.quantity})</li>;
               })}
-            </ul>
+            </ol> <br />
             <h3>Total: Rs.{calculateTotal()}/-</h3>
-            <button onClick={sendWhatsAppMessage}>Confirm Order</button>
-            <button onClick={() => setShowPopup(false)}>Cancel</button>
+            <button className="confirm" onClick={sendWhatsAppMessage}>Confirm Order</button>
+            <button className="cancel" onClick={() => setShowPopup(false)}>Cancel</button>
           </div>
         </div>
       )}
