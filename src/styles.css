@@ -7,8 +7,8 @@
     /*background-color: #f4f4f9;*/
     padding: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 400px;
     height: 100vh;
   }
@@ -19,9 +19,9 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    width: 100%;
-    max-width: 500px;
     color: black;
+    margin-top: 0;
+    
   }
   
   /* Header styles */
@@ -154,8 +154,6 @@
     border-radius: 20px;
   }
 
-  .output{
-    display: block;
-  }
+
 
   

@@ -67,7 +67,7 @@ const OrderForm = () => {
   return (
     
     <div className="order-form-container">
-      <div className="order-form" style={{ maxWidth: "500px", margin: "auto", padding: "20px" }}>
+      <div className="order-form" style={{ maxWidth: "500px", margin: "0", padding: "20px" }}>
         <h2>Order Form</h2>
         {formData.products.map((item, index) => (
           <div className="order-pack" key={index} style={{ marginBottom: "10px" }}>
