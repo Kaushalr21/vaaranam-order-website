@@ -159,9 +159,9 @@ button:hover {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 750px) {
+@media screen and (min-width: 375px) {
     .order-form {
-        width: 95vw;
+        width: 100vw;
         padding: 15px;
     }
     .order-form h2 {
