@@ -6,11 +6,8 @@
 .order-form-container {
     /*background-color: #f4f4f9;*/
     padding: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100vw;
-    height: 100vh;
+    display: block;
+    
   }
   
   /* Order form styles */
