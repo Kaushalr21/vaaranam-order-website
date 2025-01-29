@@ -1,152 +1,156 @@
-/* Global Styles */
-body{
-    font-family: 'Poppins', sans-serif;
-    background: dark;
-    margin: 0;
-    padding: 0;
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Order form container */
+.order-form-container {
+    /*background-color: #f4f4f9;*/
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    width: 400px;
+  }
+  
+  /* Order form styles */
+  .order-form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
     color: black;
-}
-
-/* Order Form Container */
-.order-form {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-    width: 420px;
-    transition: transform 0.3s ease-in-out;
-}
-
-
-
-/* Form Title */
-.order-form h2 {
+  }
+  
+  /* Header styles */
+  .order-form h2 {
+    font-size: 20px;
     text-align: center;
     color: red;
-    font-size: 22px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-/* Input Fields */
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    color: black;
-}
-
-.input-group label {
-    font-weight: 500;
-    margin-bottom: 6px;
-    color: black;
-    font-size: 14px;
-}
-
-.input-group input, .input-group select {
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 15px;
-    background-color: lightgrey;
-    transition: all 0.2s ease-in-out;
-    color: black;
-    
-}
-
-
-.input-group input:focus, .input-group select:focus {
-    outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0px 0px 5px rgba(59, 130, 246, 0.5);
-    color: black;
-}
-
-/* Product Section */
-.product-section {
-    margin-top: 15px;
-}
-
-.product {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.product select, .product input {
-    flex: 1;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-    background: #f8fafc;
-    transition: all 0.2s ease-in-out;
-    color: black;
-}
-
-.product select:focus, .product input:focus {
-    border-color: #3b82f6;
-}
-
-/* Buttons */
-button {
-    width: 100%;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 12px;
-    font-weight: 600;
-    transition: all 0.3s ease-in-out;
-}
-
-.add-btn {
-    background-color: #10b981;
-    color: white;
-}
-
-.add-btn:hover {
-    background-color: #059669;
-}
-
-.remove-btn {
-    background-color: #ef4444;
-    color: white;
-}
-
-.remove-btn:hover {
-    background-color: #dc2626;
-}
-
-.submit-btn {
-    background-color: #25D366;
-    color: white;
-    font-weight: bold;
-    box-shadow: 0px 4px 8px rgba(37, 211, 102, 0.4);
-}
-
-.submit-btn:hover {
-    background-color: #1ebe5d;
-}
-
-/* Total Amount */
-.total {
-    text-align: center;
+    margin: 0;
+  }
+  
+  .order-form h3 {
     font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  /* Product selection and quantity input */
+  .order-form label {
     font-weight: bold;
-    margin-top: 15px;
-    color: #1e293b;
-}
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  
+  .order-form select,
+  .order-form input {
+    width: 100%;
+    padding: 8px;
+    margin: 0px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    background-color: white;
+    color: black;
+  }
+  
+  .order-form input[type="number"] {
+    width: 60px;
+  }
+  
+  /* Buttons */
+  button {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Add product button */
+  button[type="button"] {
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 10px;
+    width: auto;
+  }
+  
+  /* Place Order button */
+  button[type="button"]:nth-of-type(2) {
+    background-color: #25D366;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Remove product button */
+  button[type="button"]:nth-of-type(3) {
+    background-color: red;
+    color: #fff;
+    width: auto;
+  }
+  
+  /* Popup styles */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  .popup {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .popup button {
+    padding: 12px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Confirm order and cancel button */
+  .popup button:first-of-type {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .popup button:last-of-type {
+    background-color: #f44336;
+    color: white;
+  }
 
-/* Responsive Design */
-@media (max-width: 450px) {
-    .order-form {
-        width: 90%;
-        padding: 20px;
-    }
-}
+
+
+
+  .order-pack{
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  
