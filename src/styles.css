@@ -6,47 +6,41 @@
     padding: 0;
 }
 
-/* Fullscreen Background */
-body {
-    background-color: #f8f9fa;
-    padding: 10px;
-}
-
-/* Order Form Container */
+/* Order form container */
 .order-form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 15px;
 }
 
-/* Order Form */
+/* Order form styles */
 .order-form {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: black;
     width: 100%;
-    max-width: 380px;
+    max-width: 600px;
 }
 
-/* Heading */
 .order-form h2 {
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     color: red;
-    margin-bottom: 10px;
 }
 
 .order-form h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
-/* Form Labels & Inputs */
+/* Form Labels and Inputs */
 .order-form label {
-    font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
     display: block;
@@ -55,65 +49,57 @@ body {
 .order-form select,
 .order-form input {
     width: 100%;
-    padding: 10px;
-    margin-top: 3px;
-    border-radius: 5px;
+    padding: 12px;
+    margin-top: 5px;
+    border-radius: 6px;
     border: 1px solid grey;
     background-color: white;
-    font-size: 14px;
+    color: black;
+    font-size: 16px;
 }
 
-/* Quantity Input */
+/* Restrict number input width */
 .order-form input[type="number"] {
-    width: 60px;
+    width: 100px;
     text-align: center;
 }
 
 /* Buttons */
 button {
     padding: 12px;
-    font-size: 16px;
+    font-size: 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 button:hover {
     opacity: 0.85;
 }
 
-/* Add Product Button */
+/* Add product button */
 .add-product {
     background-color: #28a745;
     color: white;
 }
 
-/* Place Order Button */
+/* Place Order button */
 .place-order {
     background-color: #25D366;
     color: white;
 }
 
-/* Remove Product Button */
+/* Remove product button */
 .remove-product {
     background-color: red;
     color: white;
-    font-size: 14px;
-    padding: 8px;
+    width: auto;
 }
 
-/* Order Pack */
-.order-pack {
-    background-color: lightgrey;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-/* Popup Overlay */
+/* Popup styles */
 .popup-overlay {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.7);
@@ -127,27 +113,32 @@ button:hover {
     left: 0;
 }
 
-/* Popup Box */
 .popup {
     background-color: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     width: 90%;
-    max-width: 350px;
+    max-width: 400px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Popup Inputs */
 .popup input {
     width: 100%;
     padding: 10px;
-    margin-bottom: 8px;
-    border-radius: 4px;
+    margin-bottom: 10px;
+    border-radius: 5px;
     border: 1px solid #ddd;
 }
 
-/* Confirm & Cancel Buttons */
+.popup button {
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Confirm and Cancel buttons */
 .popup .confirm {
     background-color: #28a745;
     color: white;
@@ -156,4 +147,59 @@ button:hover {
 .popup .cancel {
     background-color: #f44336;
     color: white;
+}
+
+/* Order Pack */
+.order-pack {
+    background-color: lightgrey;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .order-form {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .order-form h2 {
+        font-size: 42px;
+    }
+
+    .order-form select,
+    .order-form input {
+        font-size: 36px;
+    }
+
+    button {
+        font-size: 26px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .order-form {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .order-form h2 {
+        font-size: 40px;
+    }
+
+    .order-form select,
+    .order-form input {
+        font-size: 34px;
+    }
+
+    button {
+        font-size: 34px;
+        padding: 10px;
+    }
+
+    .popup {
+        width: 95%;
+    }
 }

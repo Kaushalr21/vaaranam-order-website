@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import ele from './ele.jpg';
 
 const OrderForm = () => {
   const [formData, setFormData] = useState({
@@ -65,6 +66,9 @@ const OrderForm = () => {
   };
 
   return (
+    <div> 
+    <img src={ele} style={{ width: "750px", height: "250px", marginTop: "0" }}/> 
+    <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3>
     
     <div className="order-form-container">
       <div className="order-form" style={{ maxWidth: "750px", padding: "20px" }}>
@@ -113,7 +117,7 @@ const OrderForm = () => {
         </div>
       )}
     </div> 
-
+    </div>
   );
 };
 
