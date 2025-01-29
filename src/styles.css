@@ -159,10 +159,15 @@ button:hover {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 750px) {
     .order-form {
         width: 95vw;
         padding: 15px;
+    }
+    .order-form h2 {
+        font-size: 24px;
+        text-align: center;
+        color:blue;
     }
 
     .order-form h2 {
@@ -180,7 +185,7 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 450px) {
     .order-form {
         width: 100%;
         padding: 10px;
