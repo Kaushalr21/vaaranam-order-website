@@ -1,3 +1,4 @@
+meta
 /* General Styles */
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 100%;
+    width: 750px;
     padding: 15px;
 }
 
@@ -22,14 +23,15 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     color: black;
-    width: 100%;
-    max-width: 600px;
+    display: block;
+ 
 }
 
 .order-form h2 {
     font-size: 24px;
     text-align: center;
     color: red;
+    margin: 0;
 }
 
 .order-form h3 {
@@ -120,10 +122,12 @@ button:hover {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: black;
+    margin: 10px;
+    
 }
 
 .popup input {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -157,22 +161,44 @@ button:hover {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+.logo{ 
+    width: 750px;
+    height: 250px;
+    margin: 10px;
+    border-radius: 20px;
+}
 
 /* Responsive Styles */
-@media screen and (min-width: 375px) {
-    .order-form {
-        width: 100vw;
-        padding: 15px;
+@media screen and (max-width: 600px) {
+    .logo{ 
+        width: 95vw;
+        height: 200px;
+        margin: 10px;
+        border-radius: 20px;
     }
+    .order-form-container{
+        width: 95vw;
+    }
+   
+    .order-form {
+        width: 950px;
+        padding: 25px;
+        display: block;
+    }
+    /* Form Labels and Inputs */
+.order-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 20px;
+}
     .order-form h2 {
-        font-size: 24px;
+        font-size: 20px;
         text-align: center;
         color:blue;
     }
 
-    .order-form h2 {
-        font-size: 20px;
-    }
+
 
     .order-form select,
     .order-form input {
@@ -180,38 +206,13 @@ button:hover {
     }
 
     button {
-        font-size: 20px;
+        font-size: 15px;
         padding: 10px;
     }
 }
 
-@media screen and (max-width: 450px) {
-    .order-form {
-        width: 100%;
-        padding: 10px;
-    }
 
-    .order-form h2 {
-        font-size: 40px;
-    }
-
-    .order-form select,
-    .order-form input {
-        font-size: 34px;
-    }
-
-    button {
-        font-size: 34px;
-        padding: 10px;
-    }
-
-    .popup {
-        width: 95vw;
-    }
-    
-}
 
 .list{
-    list-style-position: inside;
     text-align: left;
 }

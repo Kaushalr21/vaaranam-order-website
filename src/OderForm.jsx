@@ -66,12 +66,13 @@ const OrderForm = () => {
   };
 
   return (
-    <div> <center>
-    <img src={ele} style={{ width: "480px", height: "250px", margin: "10px", borderRadius:"20px" }}/> 
-    <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3></center>
+    <div> 
+<center>
+    <img src={ele} className="logo" />
+    <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3>
     
     <div className="order-form-container">
-      <div className="order-form" style={{ maxWidth: "750px", padding: "20px" }}>
+      <div className="order-form" >
         <h2>Order Form</h2> <br />
         {formData.products.map((item, index) => (
           <div className="order-pack" key={index} style={{ marginBottom: "10px" }}>
@@ -82,9 +83,9 @@ const OrderForm = () => {
                   {product.name} - Rs.{product.price}/-
                 </option>
               ))}
-            </select> <br /> <br />
+            </select> <br />
             
-            <label>Quantity</label>            
+            <label>Quantity</label> 
             <input  className="quanNum" type="number" value={item.quantity} min="1" onChange={(e) => handleProductChange(index, "quantity", parseInt(e.target.value))} />
             <button type="button" onClick={() => removeProduct(index)} style={{ background: "red", color: "white", border: "none", padding: "5px 10px", cursor: "pointer", width:"100%" }}>Remove</button>
           </div>
@@ -117,7 +118,7 @@ const OrderForm = () => {
         </div>
       )}
     </div> 
-    </div>
+    </center> </div>
   );
 };
 
