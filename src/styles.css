@@ -223,6 +223,7 @@ button:hover {
     .order-form select,
     .order-form input {
         font-size: 15px;
+        width: 75%;
     }
 
     .button {
