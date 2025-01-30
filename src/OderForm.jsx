@@ -76,25 +76,27 @@ const OrderForm = () => {
           <div className="order-form" >
             <h2>Order Form</h2> <br />
             <div className="table-pack">
-            <table>
+            <table> 
+              <tbody>
               <tr> 
-              <td> <label>Product</label> </td>
-              <td> 
-                <select className="inputs" value={formData.selectedProduct} onChange={(e) => setFormData((prev) => ({ ...prev, selectedProduct: e.target.value }))}>
-              <option value="">Select product</option>
-              {productOptions.map((product) => (
-                <option key={product.id} value={product.id}>
-                  {product.name} - Rs.{product.price}/-
-                </option>
-              ))}
-              </select>
-              </td>
-              </tr>
+                  <td> <label>Product</label> </td>
+                  <td> 
+                    <select className="inputs" value={formData.selectedProduct} onChange={(e) => setFormData((prev) => ({ ...prev, selectedProduct: e.target.value }))}>
+                  <option value="">Select product</option>
+                  {productOptions.map((product) => (
+                    <option key={product.id} value={product.id}>
+                      {product.name} - Rs.{product.price}/-
+                    </option>
+                  ))}
+                  </select>
+                  </td>
+                </tr>
             
               <tr> 
-              <td><label>Quantity</label> </td>
-              <td><input className="inputs" type="number" value={formData.selectedQuantity} min="1" onChange={(e) => setFormData((prev) => ({ ...prev, selectedQuantity: parseInt(e.target.value) }))} /> </td>
-            </tr>
+                <td><label>Quantity</label> </td>
+                <td><input className="inputs" type="number" value={formData.selectedQuantity} min="1" onChange={(e) => setFormData((prev) => ({ ...prev, selectedQuantity: parseInt(e.target.value) }))} /> </td>
+              </tr>
+              </tbody>
             </table>
             <button type="button" onClick={addProduct} style={{ background: "#009432", color: "white", border: "none", padding: "10px", marginTop: "10px", cursor: "pointer", borderRadius:"0px" }}>Add items</button>
             </div>           
