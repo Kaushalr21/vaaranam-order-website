@@ -1,12 +1,14 @@
 meta
 /* General Styles */
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
+body{
+    background-color: black;
+}
 /* Order form container */
 .order-form-container {
     display: flex;
@@ -19,7 +21,6 @@ meta
 /* Order form styles */
 .order-form {
     background-color: white;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     color: black;
@@ -34,9 +35,11 @@ meta
     margin: 0;
 }
 
-.order-form h3 {
+.order-form h2 {
     font-size: 20px;
-    margin-bottom: 15px;
+    margin: 0px;
+    padding: 5px 0px;
+    color: black;
 }
 
 /* Form Labels and Inputs */
@@ -46,12 +49,9 @@ meta
     display: block;
 }
 
-.order-form select,
-.order-form input {
-    width: 100%;
+.inputs{
     padding: 12px;
     margin-top: 5px;
-    border-radius: 6px;
     border: 1px solid grey;
     background-color: white;
     color: black;
@@ -59,21 +59,18 @@ meta
 }
 
 /* Restrict number input width */
-.order-form input[type="number"] {
-    width: 100px;
-    text-align: center;
-}
+
 
 /* Buttons */
 button {
     padding: 12px;
     font-size: 18px;
     border: none;
-    border-radius: 6px;
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
-    transition: 0.3s;
+    transition: 0.1s;
+
 }
 
 button:hover {
@@ -168,6 +165,31 @@ button:hover {
     border-radius: 20px;
 }
 
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: white;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  }
+  
+  .order-table th, .order-table td {
+    padding: 6px 10px;
+    text-align: left;
+  }
+  .order-table td {
+    border-bottom: 1px solid black;
+    border-top: solid 1px black;
+  }
+  
+  .order-table th {
+    color: white;
+  }
+  
+  .table-pack{
+    overflow: hidden;
+    padding: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  }
 /* Responsive Styles */
 @media screen and (max-width: 600px) {
     .logo{ 
@@ -188,7 +210,6 @@ button:hover {
     /* Form Labels and Inputs */
 .order-form label {
     font-weight: bold;
-    margin-bottom: 5px;
     display: block;
     font-size: 20px;
 }
@@ -205,14 +226,11 @@ button:hover {
         font-size: 15px;
     }
 
-    button {
+    .button {
         font-size: 15px;
-        padding: 10px;
     }
 }
 
-
-
-.list{
+.popuplist{
     text-align: left;
 }

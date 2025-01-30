@@ -7,7 +7,9 @@ const OrderForm = () => {
     name: "",
     phone: "",
     address: "",
-    products: [{ product: "product1", quantity: 1 }],
+    products: [],
+    selectedProduct: "",
+    selectedQuantity: 1,
   });
   const [showPopup, setShowPopup] = useState(false);
 
@@ -24,17 +26,15 @@ const OrderForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleProductChange = (index, key, value) => {
-    const updatedProducts = [...formData.products];
-    updatedProducts[index][key] = value;
-    setFormData((prev) => ({ ...prev, products: updatedProducts }));
-  };
-
   const addProduct = () => {
-    setFormData((prev) => ({
-      ...prev,
-      products: [...prev.products, { product: "product1", quantity: 1 }],
-    }));
+    if (formData.selectedProduct) {
+      setFormData((prev) => ({
+        ...prev,
+        products: [...prev.products, { product: formData.selectedProduct, quantity: formData.selectedQuantity }],
+        selectedProduct: "",
+        selectedQuantity: 1,
+      }));
+    }
   };
 
   const removeProduct = (index) => {
@@ -45,7 +45,7 @@ const OrderForm = () => {
   const calculateTotal = () => {
     return formData.products.reduce((total, item) => {
       const product = productOptions.find((p) => p.id === item.product);
-      return total + (product.price * item.quantity || 0);
+      return total + (product ? product.price * item.quantity : 0);
     }, 0);
   };
 
@@ -55,7 +55,9 @@ const OrderForm = () => {
 
     products.forEach((item) => {
       const product = productOptions.find((p) => p.id === item.product);
-      orderDetails += `${product.name} (x${item.quantity})\n`;
+      if (product) {
+        orderDetails += `${product.name} (x${item.quantity})\n`;
+      }
     });
 
     orderDetails += `\nTotal Amount: Rs.${calculateTotal()}`;
@@ -67,58 +69,85 @@ const OrderForm = () => {
 
   return (
     <div> 
-<center>
-    <img src={ele} className="logo" />
-    <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3>
-    
-    <div className="order-form-container">
-      <div className="order-form" >
-        <h2>Order Form</h2> <br />
-        {formData.products.map((item, index) => (
-          <div className="order-pack" key={index} style={{ marginBottom: "10px" }}>
-            <label>Product</label> 
-            <select value={item.product} onChange={(e) => handleProductChange(index, "product", e.target.value)}>
+      <center>
+      <img src={ele} className="logo" />
+      <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3>
+      <div className="order-form-container">
+          <div className="order-form" >
+            <h2>Order Form</h2> <br />
+            <div className="table-pack">
+            <table>
+              <tr> 
+              <td> <label>Product</label> </td>
+              <td> 
+                <select className="inputs" value={formData.selectedProduct} onChange={(e) => setFormData((prev) => ({ ...prev, selectedProduct: e.target.value }))}>
+              <option value="">Select product</option>
               {productOptions.map((product) => (
                 <option key={product.id} value={product.id}>
                   {product.name} - Rs.{product.price}/-
                 </option>
               ))}
-            </select> <br />
+              </select>
+              </td>
+              </tr>
             
-            <label>Quantity</label> 
-            <input  className="quanNum" type="number" value={item.quantity} min="1" onChange={(e) => handleProductChange(index, "quantity", parseInt(e.target.value))} />
-            <button type="button" onClick={() => removeProduct(index)} style={{ background: "red", color: "white", border: "none", padding: "5px 10px", cursor: "pointer", width:"100%" }}>Remove</button>
+              <tr> 
+              <td><label>Quantity</label> </td>
+              <td><input className="inputs" type="number" value={formData.selectedQuantity} min="1" onChange={(e) => setFormData((prev) => ({ ...prev, selectedQuantity: parseInt(e.target.value) }))} /> </td>
+            </tr>
+            </table>
+            <button type="button" onClick={addProduct} style={{ background: "#009432", color: "white", border: "none", padding: "10px", marginTop: "10px", cursor: "pointer", borderRadius:"0px" }}>Add items</button>
+            </div>           
+            <br />
+            <h2 style={{background:"black", color:"white"}}>{formData.products.length === 0 ? "No products selected" : "Selected Products"}</h2>
+            <table className="order-table" border="1" width="100%">
+              
+              <tbody>
+                {formData.products.map((item, index) => {
+                  const product = productOptions.find((p) => p.id === item.product);
+                  return product ? (
+                    <tr key={index}>
+                      <td>{product.name}</td>
+                      <td>(x{item.quantity})</td>
+                      <td>
+                        <button type="button" onClick={() => removeProduct(index)} style={{marginTop:"0px", background: "#EA2027", color: "white", border: "none", padding: "5px 10px", cursor: "pointer", borderRadius:"0" }}>Remove</button>
+                      </td>
+                    </tr>
+                  ) : null;
+                })}
+              </tbody>
+            </table>
+            
+            <button type="button" onClick={() => setShowPopup(true)} style={{ background: "#EA2027", color: "white", border: "none", padding: "10px", width: "100%", cursor: "pointer", marginTop: "20px", borderRadius:"0px" }}>Place Order</button>
           </div>
-        ))}
-        
-        <center><button type="button" onClick={addProduct} style={{ background: "green", color: "white", border: "none", padding: "10px", marginTop: "10px", cursor: "pointer" }}>Add Product</button></center>
-        <button type="button" onClick={() => setShowPopup(true)} style={{ background: "black", color: "white", border: "none", padding: "10px", width: "100%", cursor: "pointer", marginTop: "20px" }}>Place Order</button>
-      </div>
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup">
-            <h3>Confirm Your Order</h3>
-            <label>Name</label>
-            <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
-            <label>Phone</label>
-            <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required />
-            <label>Address</label>
-            <input type="text" name="address" value={formData.address} onChange={handleInputChange} required />
-            <h3 style={{color:"red"}}>Your order</h3>
-            <ol className="list">
-              {formData.products.map((item, index) => {
-                const product = productOptions.find((p) => p.id === item.product);
-                return <li key={index}>{product.name} (x{item.quantity})</li>;
-              })}
-            </ol> <br />
-            <h3>Total: Rs.{calculateTotal()}/-</h3>
-            <button className="confirm" onClick={sendWhatsAppMessage}>Confirm Order</button>
-            <button className="cancel" onClick={() => setShowPopup(false)}>Cancel</button>
-          </div>
-        </div>
-      )}
-    </div> 
-    </center> </div>
+          {showPopup && (
+            <div className="popup-overlay">
+              <div className="popup">
+                <h3 style={{color:"red"}}>Confirm Your Order</h3>
+                <label>Name</label>
+                <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
+                <label>Phone</label>
+                <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange} required />
+                <label>Address</label>
+                <input type="text" name="address" value={formData.address} onChange={handleInputChange} required />
+                <h3>Ordered Products</h3>
+                <ol>
+                  {formData.products.map((item, index) => {
+                    const product = productOptions.find((p) => p.id === item.product);
+                    return product ? (
+                      <li className="popuplist" key={index}>{product.name} (x{item.quantity})</li>
+                    ) : null;
+                  })}
+                </ol>
+                <h3>Total: Rs.{calculateTotal()}/-</h3>
+                <button className="confirm" onClick={sendWhatsAppMessage}>Confirm Order</button>
+                <button className="cancel" onClick={() => setShowPopup(false)}>Cancel</button>
+              </div>
+            </div>
+          )}
+        </div> 
+      </center> 
+    </div>
   );
 };
 
