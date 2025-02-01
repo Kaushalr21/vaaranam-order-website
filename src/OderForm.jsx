@@ -18,7 +18,8 @@ const OrderForm = () => {
     { id: "product2", name: "Coco Shampoo(250ml)", price: 125 },
     { id: "product3", name: "Coco Handwash(500ml)", price: 75 },
     { id: "product4", name: "Coco Dishwah(500ml)", price: 85 },
-    { id: "product5", name: "Coco handwash(1000ml)", price: 250 },
+    { id: "product5", name: "Coco Superwash(1000ml)", price: 250 },
+    { id: "product6", name: "High quality liquid detergent(5L with can)", price: 500 }
   ];
 
   const handleInputChange = (e) => {
@@ -71,7 +72,7 @@ const OrderForm = () => {
     <div> 
       <center>
       <img src={ele} className="logo" />
-      <h3 style={{ color: "red", margin:"0"}}>Products madeup of 100% Coconut Oil</h3>
+      <h3 style={{ color: "white", margin:"0"}}>Products madeup of 100% Coconut Oil</h3>
       <div className="order-form-container">
           <div className="order-form" >
             <h2>Order Form</h2> <br />

@@ -24,6 +24,7 @@ body{
     padding: 20px;
     color: black;
     display: block;
+    border-radius: 20px;
  
 }
 
@@ -218,7 +219,6 @@ button:hover {
     .order-form h2 {
         font-size: 20px;
         text-align: center;
-        color:blue;
     }
 
 
