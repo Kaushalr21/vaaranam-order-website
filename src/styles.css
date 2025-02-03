@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 body{
     background-color: black;
@@ -20,12 +21,13 @@ body{
 /* Order form styles */
 .order-form {
     background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 20px;
     color: black;
     display: block;
     border-radius: 20px;
- 
+    border: solid #EA2027;
+    overflow: hidden;
 }
 
 .order-form h2 {
@@ -45,7 +47,6 @@ body{
 /* Form Labels and Inputs */
 .order-form label {
     font-weight: bold;
-    margin-bottom: 5px;
     display: block;
     margin-right: 7px;
 }
@@ -73,6 +74,7 @@ button {
     width: 100%;
     margin-top: 10px;
     transition: 0.1s;
+    border-radius: 5px;
 
 }
 
@@ -176,8 +178,9 @@ button:hover {
   }
   
   .order-table th, .order-table td {
-    padding: 6px 10px;
+    padding: 10px 10px;
     text-align: left;
+    width: 100%;
   }
   .order-table td {
     border-bottom: 1px solid black;
@@ -191,6 +194,7 @@ button:hover {
   .table-pack{
     overflow: hidden;
     padding: 10px;
+    border-radius: 5px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   }
 /* Responsive Styles */
@@ -236,4 +240,11 @@ button:hover {
 
 .popuplist{
     text-align: left;
+}
+
+.placeButton{
+    position: relative;
+    top: 25px;
+    right: 25px;    
+    border-radius: 0px;
 }

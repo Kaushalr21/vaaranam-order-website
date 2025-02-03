@@ -99,10 +99,10 @@ const OrderForm = () => {
               </tr>
               </tbody>
             </table>
-            <button type="button" onClick={addProduct} style={{ background: "#009432", color: "white", border: "none", padding: "10px", marginTop: "10px", cursor: "pointer", borderRadius:"0px" }}>Add items</button>
+            <button type="button" onClick={addProduct} style={{ background: "#009432", color: "white", border: "none", padding: "10px", marginTop: "10px", cursor: "pointer"}}>Add items</button>
             </div>           
             <br />
-            <h2 style={{background:"black", color:"white"}}>{formData.products.length === 0 ? "No products selected" : "Selected Products"}</h2>
+            <h2 style={{background:"black", color:"white", borderRadius: "5px 5px 0px 0px"}}>{formData.products.length === 0 ? "*No products selected" : "Selected Products"}</h2>
             <table className="order-table" border="1" width="100%">
               
               <tbody>
@@ -121,7 +121,7 @@ const OrderForm = () => {
               </tbody>
             </table>
             
-            <button type="button" onClick={() => setShowPopup(true)} style={{ background: "#EA2027", color: "white", border: "none", padding: "10px", width: "100%", cursor: "pointer", marginTop: "20px", borderRadius:"0px" }}>Place Order</button>
+            <button className="placeButton" type="button" onClick={() => setShowPopup(true)} style={{ background: "#EA2027", color: "white", border: "none", padding: "10px", width: "113%", cursor: "pointer", marginTop: "20px"  }}>Place Order</button>
           </div>
           {showPopup && (
             <div className="popup-overlay">
