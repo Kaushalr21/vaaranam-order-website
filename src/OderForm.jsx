@@ -75,7 +75,7 @@ const OrderForm = () => {
       
       <div className="order-form-container">
       <img src={ele} className="logo" />
-      <marquee className="marQ">Products madeup of 100% Coconut Oil</marquee>
+      <marquee className="marQ" style={{color:"red"}}>Products madeup of 100% Coconut Oil</marquee>
       <h2>Order Form</h2>
           <div className="order-form" >
            
