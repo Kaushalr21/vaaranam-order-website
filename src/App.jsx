@@ -3,10 +3,10 @@ import OrderForm from './OderForm';
 
 function App() {
   return (
-    <div>
+    <>
        
        <OrderForm/>
-    </div>
+    </>
   );
 }
 

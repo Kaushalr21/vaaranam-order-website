@@ -1,33 +1,41 @@
 /* General Styles */
 * {
-    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-color: white;
+
+    
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
 }
-body{
-    background-color: black;
+
+
+.stable th{
+
+    padding: 10px;
+    border: solid 2px blue;
+    border-collapse: collapse;
 }
 /* Order form container */
 .order-form-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 750px;
-    padding: 15px;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
 }
 
 /* Order form styles */
 .order-form {
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 20px;
+    padding: 5px;
     color: black;
     display: block;
-    border-radius: 20px;
-    border: solid #EA2027;
+    border: none;
+    border-radius: 10px;
     overflow: hidden;
+    width: 450px;
 }
 
 .order-form h2 {
@@ -52,12 +60,13 @@ body{
 }
 
 .inputs{
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid grey;
+    padding: 10px;
+    border: solid 2px;
+    border-radius: 5px;
     background-color: white;
     color: black;
     font-size: 16px;
+    margin: 10px 0px;
     width: 100%;
     
 }
@@ -90,7 +99,7 @@ button:hover {
 
 /* Place Order button */
 .place-order {
-    background-color: #25D366;
+    background-color: grey;
     color: white;
 }
 
@@ -164,17 +173,14 @@ button:hover {
     margin-bottom: 10px;
 }
 .logo{ 
-    width: 750px;
+    width: 550px;
     height: 250px;
-    margin: 10px;
-    border-radius: 20px;
 }
 
 .order-table {
     width: 100%;
     border-collapse: collapse;
     border: white;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   }
   
   .order-table th, .order-table td {
@@ -191,34 +197,31 @@ button:hover {
     color: white;
   }
   
-  .table-pack{
+  .d-pack{
     overflow: hidden;
     padding: 10px;
+    border: solid #2d3436 2px;
     border-radius: 5px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  }
+  .stable{
+
   }
 /* Responsive Styles */
 @media screen and (max-width: 600px){
     .logo{ 
-        width: 95vw;
+        width: 100%;
         height: 200px;
-        margin: 10px;
-        border-radius: 20px;
     }
-    .order-form-container{
-        width: 95vw;
-    }
-   
     .order-form {
-        width: 95vw;
-        padding: 25px;
+        padding: 10px;
         display: block;
+        
     }
     /* Form Labels and Inputs */
     .order-form label {
         font-weight: bold;
         display: block;
-        font-size: 20px;
+        font-size: 15px;
     }
     .order-form h2 {
         font-size: 20px;
@@ -243,8 +246,34 @@ button:hover {
 }
 
 .placeButton{
-    position: relative;
-    top: 25px;
-    right: 25px;    
-    border-radius: 0px;
+    background-color: #2d3436;
+    color: white;
+    transition: 0.3s;
+    position: static;
+    bottom: 0;
+    border-radius: 0;
+    
 }
+.placeButton:hover{
+    background-color: red;
+}
+.addButton{
+    background-color: #2d3436;
+    color: white;
+    transition: 0.3s;
+}
+.addButton:hover{
+    color: white;
+    background-color: green;
+}
+.rButton{
+    background-color: #2d3436;
+    color: white;
+    transition: 0.3s;
+    margin: 0;
+}
+.rButton:hover{
+    color: white;
+    background-color: red;
+}
+
