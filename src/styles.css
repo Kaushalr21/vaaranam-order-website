@@ -212,6 +212,7 @@ button:hover {
     .order-form {
         padding: 10px;
         display: block;
+        width: 95vw;
         
     }
     /* Form Labels and Inputs */
