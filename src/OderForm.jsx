@@ -105,7 +105,7 @@ const OrderForm = () => {
             <button type="button" className="addButton" onClick={addProduct}>Add items</button>
             </div>           
             <br />
-            <h2 style={{background:"#2d3436", color:"white", borderRadius: "5px 5px 0px 0px"}}>{formData.products.length === 0 ? "*No products selected" : "Selected Products"}</h2>
+            <h2 style={{background:"white", color:"black", borderRadius: "5px 5px 0px 0px"}}>{formData.products.length === 0 ? "*No products selected" : "Selected Products"}</h2>
             <table className="order-table" border="1" width="100%">
               
               <tbody>
@@ -123,10 +123,10 @@ const OrderForm = () => {
                 })}
               </tbody>
             </table>
-            
+            <button className="placeButton" type="button" onClick={() => setShowPopup(true)}>Place Order</button>
             
           </div>
-          <button className="placeButton" type="button" onClick={() => setShowPopup(true)}>Place Order</button>
+          
           {showPopup && (
             <div className="popup-overlay">
               <div className="popup">
